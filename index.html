@@ -19,44 +19,44 @@
 	<code>https://raw.githubusercontent.com/miamor/prettify/master/js/prettifier.js</code>
 	<h3>Javascript</h3>
 <code>function selectCode(a) {
-    var y = a.parentNode.getElementsByClassName(&#x27;code_content&#x27;)[0];
-    if (window.getSelection) {
-        var i = window.getSelection();
-        if(i.setBaseAndExtent) {
-            i.setBaseAndExtent(y, 0, y, y.innerText.length - 1)
-        } else {
-            if(window.opera &#x26;&#x26; y.innerHTML.substring(y.innerHTML.length - 4) == &#x27;&#x3C;BR&#x3E;&#x27;) {
-                y.innerHTML = y.innerHTML + &#x27; &#x27;
-            }
-            var r = document.createRange();
-            r.selectNodeContents(e);
-            i.removeAllRanges();
-            i.addRange(r)
-        }
-    } else if(document.getSelection) {
-        var i = document.getSelection();
-        var r = document.createRange();
-        r.selectNodeContents(e);
-        i.removeAllRanges();
-        i.addRange(r)
-    } else if(document.selection) {
-        var r = document.body.createTextRange();
-        r.moveToElementText(y);
-        r.select()
-    }
+&#x9; var y = a.parentNode.getElementsByClassName(&#x27;code_content&#x27;)[0];
+&#x9; if (window.getSelection) {
+&#x9;&#x9;  var i = window.getSelection();
+&#x9;&#x9;  if(i.setBaseAndExtent) {
+&#x9;&#x9;&#x9;&#x9;i.setBaseAndExtent(y, 0, y, y.innerText.length - 1)
+&#x9;&#x9;  } else {
+&#x9;&#x9;&#x9;&#x9;if(window.opera &#x26;&#x26; y.innerHTML.substring(y.innerHTML.length - 4) == &#x27;&#x3C;BR&#x3E;&#x27;) {
+&#x9;&#x9;&#x9;&#x9;&#x9; y.innerHTML = y.innerHTML + &#x27; &#x27;
+&#x9;&#x9;&#x9;&#x9;}
+&#x9;&#x9;&#x9;&#x9;var r = document.createRange();
+&#x9;&#x9;&#x9;&#x9;r.selectNodeContents(e);
+&#x9;&#x9;&#x9;&#x9;i.removeAllRanges();
+&#x9;&#x9;&#x9;&#x9;i.addRange(r)
+&#x9;&#x9;  }
+&#x9; } else if(document.getSelection) {
+&#x9;&#x9;  var i = document.getSelection();
+&#x9;&#x9;  var r = document.createRange();
+&#x9;&#x9;  r.selectNodeContents(e);
+&#x9;&#x9;  i.removeAllRanges();
+&#x9;&#x9;  i.addRange(r)
+&#x9; } else if(document.selection) {
+&#x9;&#x9;  var r = document.body.createTextRange();
+&#x9;&#x9;  r.moveToElementText(y);
+&#x9;&#x9;  r.select()
+&#x9; }
 }
 if(text) {} else {
-    var text = &#x27;Selecionar todos&#x27;
+&#x9; var text = &#x27;Selecionar todos&#x27;
 }
 $(function () {
 &#x9;$(&#x22;code&#x22;).wrap(&#x27;&#x3C;dl class=&#x22;code_content hidecode&#x22;&#x3E;&#x3C;/dl&#x3E;&#x27;).before(&#x27;&#x3C;dt onclick=&#x22;selectCode(this)&#x22; title=&#x22;Select all&#x22; style=&#x22;cursor:pointer&#x22; style=&#x22;border: none;&#x22;&#x3E;Select all&#x3C;/dt&#x3E;&#x27;).wrap(&#x27;&#x3C;dd class=&#x22;code_content&#x22;&#x3E;&#x3C;/dd&#x3E;&#x27;);
-   $(&#x22;code&#x22;).length &#x26;&#x26; (
-      $(&#x22;code&#x22;).addClass(&#x22;prettyprint linenums&#x22;).parent().prev().attr({
-         onclick: &#x22;selectCode(this)&#x22;,
-         title: &#x22;Select all&#x22;,
-         style: &#x22;cursor:pointer&#x22;
-      })
-    );
+&#x9;$(&#x22;code&#x22;).length &#x26;&#x26; (
+&#x9;&#x9;$(&#x22;code&#x22;).addClass(&#x22;prettyprint linenums&#x22;).parent().prev().attr({
+&#x9;&#x9;&#x9;onclick: &#x22;selectCode(this)&#x22;,
+&#x9;&#x9;&#x9;title: &#x22;Select all&#x22;,
+&#x9;&#x9;&#x9;style: &#x22;cursor:pointer&#x22;
+&#x9;&#x9;})
+&#x9; );
 &#x9;$(&#x27;code&#x27;).each(function () {
 &#x9;&#x9;$(this).wrap(&#x27;&#x3C;pre class=&#x22;prettyprint&#x27; + ($(this).text().indexOf(&#x22;&#x3C;&#x22;) == -1 &#x26;&#x26; /[\s\S]+{[\s\S]+:[\s\S]+}/.test($(this).text()) ? &#x22; lang-css&#x22; : &#x22;&#x22;) + &#x27; linenums&#x22; /&#x3E;&#x27;);
 &#x9;});
