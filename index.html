@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" type="image/x-icon" href="http://localhost/mCode/assets/dist/img/favicon.ico" />
+	<title>PrettifyJS</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/index.css">
+	<script src="js/jquery-2.2.3.min.js"></script>
+	<script src="js/prettifier.js"></script>
+	<script src="js/index.js"></script>
+</head>
+<body>
+	<h2>Syntax highlighter - Usage</h2>
+	<h3>Cdn</h3>
+	<code>https://raw.github.com/miamor/prettify/js/prettifier.js</code>
+	<h3>Javascript</h3>
+<code>function selectCode(a) {<br>&nbsp; &nbsp;a = $(a).closest(".codebox").find("CODE")[0];<br>&nbsp; &nbsp;if (window.getSelection) {<br>&nbsp; &nbsp;&nbsp; &nbsp;var b = window.getSelection();<br>&nbsp; &nbsp;&nbsp; &nbsp;if (b.setBaseAndExtent) b.setBaseAndExtent(a, 0, a, a.innerText.length - 1);<br>&nbsp; &nbsp;&nbsp; &nbsp;else {<br>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;window.opera &amp;&amp; "&lt;BR&gt;" == a.innerHTML.substring(a.innerHTML.length - 4) &amp;&amp; (a.innerHTML += " ");<br>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;var c = document.createRange();<br>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;c.selectNodeContents(a);<br>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;b.removeAllRanges();<br>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;b.addRange(c)<br>&nbsp; &nbsp;&nbsp; &nbsp;}<br>&nbsp; &nbsp;} else document.getSelection ? (b = document.getSelection(), c = document.createRange(), c.selectNodeContents(a), b.removeAllRanges(), b.addRange(c)) : document.selection &amp;&amp; (c = document.body.createTextRange(), c.moveToElementText(a), c.select())<br>}<br>$(function () {<br>&nbsp; &nbsp;$(".post code").length &amp;&amp; ($(".post code br").replaceWith("\n"),<br>&nbsp; &nbsp;&nbsp; &nbsp;$(".post code").addClass("prettyprint linenums").parent().prev().attr({<br>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;onclick: "selectCode(this)",<br>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;title: "Click để chọn toàn bộ code",<br>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;style: "cursor:pointer"<br>&nbsp; &nbsp;&nbsp; &nbsp;}), $.getScript("http://devs.forumvi.com/11727.js", function () {<br>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;prettyPrint()<br>&nbsp; &nbsp;&nbsp; &nbsp;}));<br>});</code>
+	<h3>CSS</h3>
+	<code>.prettyprint .pln{color:#000}.prettyprint .str{color:#080}.prettyprint .kwd{color:#008}.prettyprint .com{color:#800}.prettyprint .typ{color:#606}.prettyprint .lit{color:#066}.prettyprint .fmvip{color:#660}.prettyprint .tag{color:#008}.prettyprint .atn{color:#606}.prettyprint .atv{color:#080}.prettyprint .dec{color:#606}.wind li{position:relative;border-left:3px solid #EBEFF9;padding:0 0 4px 5px;line-height:20px}.prettyprint,code{font-size:13px;padding:0}ol.linenums li:hover{background:#EBEFF9}ol.linenums{text-indent:0}ol.linenums li{padding-bottom:0}</code>
+</body>
+</html>
